@@ -1,0 +1,2235 @@
+/* =====================================================================
+   NIKE KNIGHT - HISTORIA Y ORIGEN
+   ENTREGA SEMANA 6
+   HTML5 + CSS3
+   SIN JAVASCRIPT
+   ===================================================================== */
+
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   VARIABLES CSS
+   ---------------------------------------------------------------------
+   Se utilizan variables para mantener colores, sombras, bordes,
+   fuentes y tamaños organizados.
+   ===================================================================== */
+
+:root {
+
+    --black: #080808;
+    --dark: #111827;
+    --dark-two: #1f2937;
+
+    --white: #ffffff;
+    --light: #f5f7fb;
+    --gray: #64748b;
+    --light-gray: #e5e7eb;
+
+    --red: #e5092f;
+    --red-light: #fff0f3;
+
+    --blue: #2563eb;
+    --blue-light: #eff6ff;
+
+    --orange: #f97316;
+    --orange-light: #fff7ed;
+
+    --gold: #f5b700;
+    --gold-light: #fff8dc;
+
+    --purple: #7c3aed;
+    --purple-light: #f5f3ff;
+
+    --green: #10b981;
+
+    --heading: 'Poppins', sans-serif;
+    --body: 'Roboto', sans-serif;
+
+    --radius-small: 10px;
+    --radius-medium: 18px;
+    --radius-large: 28px;
+
+    --shadow-small:
+        0 5px 15px rgba(0, 0, 0, 0.05);
+
+    --shadow-medium:
+        0 12px 30px rgba(0, 0, 0, 0.08);
+
+    --shadow-large:
+        0 20px 50px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* =====================================================================
+   RESET GENERAL
+   ===================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: var(--body);
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            var(--light) 45%,
+            #ffffff 100%
+        );
+
+    color: var(--dark);
+
+    line-height: 1.6;
+
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+/* =====================================================================
+   HEADER
+   ===================================================================== */
+
+.main-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background-color: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--light-gray);
+
+    box-shadow: var(--shadow-small);
+
+}
+
+
+/* Barra superior */
+
+.top-announcement {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--black),
+            var(--dark-two),
+            var(--black)
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 7px 15px;
+
+    font-family: var(--heading);
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   TARJETAS / ELEMENTOS INTERNOS CON FLEXBOX
+   ---------------------------------------------------------------------
+   El encabezado utiliza Flexbox para distribuir logo, navegación
+   y estado de la página.
+   ===================================================================== */
+
+.header-body {
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 15px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* Logo */
+
+.logo-link {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.brand-logo {
+
+    width: 42px;
+
+    height: 25px;
+
+    color: var(--black);
+
+}
+
+
+.brand-title {
+
+    font-family: var(--heading);
+
+    font-size: 1.35rem;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+}
+
+
+.brand-title .highlight {
+
+    color: var(--red);
+
+}
+
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   MENÚ ADAPTABLE
+   ---------------------------------------------------------------------
+   El menú utiliza Flexbox y flex-wrap para reorganizarse cuando
+   disminuye el tamaño de la pantalla.
+   ===================================================================== */
+
+.main-nav ul {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.nav-link {
+
+    display: block;
+
+    padding: 9px 13px;
+
+    border-radius: 10px;
+
+    font-family: var(--heading);
+
+    font-size: 0.84rem;
+
+    font-weight: 600;
+
+    color: var(--dark);
+
+    transition:
+        0.3s ease;
+
+}
+
+
+.nav-link:hover {
+
+    background-color: var(--light);
+
+    color: var(--red);
+
+    transform: translateY(-2px);
+
+}
+
+
+.nav-link.active {
+
+    background-color: var(--black);
+
+    color: white;
+
+}
+
+
+/* Semana */
+
+.status-pill {
+
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--red),
+            var(--orange)
+        );
+
+    color: white;
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    font-family: var(--heading);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   LAYOUT GENERAL CON GRID
+   ---------------------------------------------------------------------
+   El contenido principal utiliza CSS Grid.
+   ===================================================================== */
+
+.main-layout {
+
+    width: min(1250px, 92%);
+
+    margin: auto;
+
+}
+
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+
+.hero-banner {
+
+    margin-top: 35px;
+
+    min-height: 500px;
+
+    padding: 60px;
+
+    border-radius: var(--radius-large);
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(229, 9, 47, 0.28),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(37, 99, 235, 0.22),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #050505,
+            #111827 60%,
+            #1f2937
+        );
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        0.7fr;
+
+    align-items: center;
+
+    gap: 50px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    box-shadow: var(--shadow-large);
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.category-badge {
+
+    display: inline-block;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    padding: 7px 14px;
+
+    border-radius: 50px;
+
+    font-family: var(--heading);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.hero-title {
+
+    font-family: var(--heading);
+
+    font-size: clamp(3rem, 6vw, 5.7rem);
+
+    line-height: 0.95;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero-title span {
+
+    color: var(--red);
+
+}
+
+
+.hero-subtitle {
+
+    max-width: 650px;
+
+    color: #cbd5e1;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+}
+
+
+/* Botones */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.hero-button {
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    font-family: var(--heading);
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+
+}
+
+
+.primary-button {
+
+    background-color: var(--red);
+
+    color: white;
+
+}
+
+
+.primary-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(229, 9, 47, 0.35);
+
+}
+
+
+.secondary-button {
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    color: white;
+
+}
+
+
+.secondary-button:hover {
+
+    background-color: white;
+
+    color: var(--black);
+
+}
+
+
+/* Visual Hero */
+
+.hero-visual {
+
+    min-height: 350px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+}
+
+
+.hero-circle {
+
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.12),
+            rgba(255,255,255,0.02)
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 0 0 20px rgba(255,255,255,0.02),
+        0 0 0 40px rgba(255,255,255,0.015);
+
+}
+
+
+.hero-symbol {
+
+    font-family: var(--heading);
+
+    font-size: 2.8rem;
+
+    font-weight: 900;
+
+    font-style: italic;
+
+}
+
+
+.hero-year {
+
+    margin-top: 5px;
+
+    color: var(--gold);
+
+    font-family: var(--heading);
+
+    font-weight: 700;
+
+    font-size: 0.8rem;
+
+}
+
+
+/* Tarjetas flotantes */
+
+.floating-card {
+
+    position: absolute;
+
+    background: white;
+
+    color: var(--black);
+
+    padding: 10px 14px;
+
+    border-radius: 12px;
+
+    box-shadow: var(--shadow-medium);
+
+    font-family: var(--heading);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+}
+
+
+.floating-card span {
+
+    margin-right: 5px;
+
+}
+
+
+.floating-card-one {
+
+    top: 40px;
+
+    right: 10px;
+
+}
+
+
+.floating-card-two {
+
+    bottom: 35px;
+
+    left: 5px;
+
+}
+
+
+/* =====================================================================
+   INTRODUCCIÓN
+   ===================================================================== */
+
+.intro-section {
+
+    margin-top: 70px;
+
+    padding: 45px;
+
+    background: white;
+
+    border-radius: var(--radius-large);
+
+    border: 1px solid var(--light-gray);
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 30px;
+
+    box-shadow: var(--shadow-small);
+
+}
+
+
+.intro-number {
+
+    font-family: var(--heading);
+
+    font-size: 4rem;
+
+    font-weight: 900;
+
+    color: var(--red);
+
+    line-height: 1;
+
+}
+
+
+.small-label {
+
+    color: var(--red);
+
+    font-family: var(--heading);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.intro-content h2 {
+
+    margin-top: 8px;
+
+    margin-bottom: 15px;
+
+    font-family: var(--heading);
+
+    font-size: 2rem;
+
+    font-weight: 800;
+
+}
+
+
+.intro-content p {
+
+    color: var(--gray);
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =====================================================================
+   SECCIONES
+   ===================================================================== */
+
+.content-section {
+
+    margin-top: 80px;
+
+}
+
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.section-kicker {
+
+    display: block;
+
+    color: var(--red);
+
+    font-family: var(--heading);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.section-heading h2 {
+
+    font-family: var(--heading);
+
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+
+    line-height: 1.1;
+
+    font-weight: 900;
+
+}
+
+
+.section-line {
+
+    height: 3px;
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--red),
+            transparent
+        );
+
+}
+
+
+/* =====================================================================
+   ORIGEN
+   ===================================================================== */
+
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   TARJETAS INTERNAS CON FLEXBOX
+   ---------------------------------------------------------------------
+   Las tarjetas del origen se organizan con Flexbox.
+   ===================================================================== */
+
+.origin-main-card {
+
+    background: white;
+
+    border: 1px solid var(--light-gray);
+
+    border-radius: var(--radius-large);
+
+    padding: 40px;
+
+    box-shadow: var(--shadow-medium);
+
+}
+
+
+.origin-text {
+
+    max-width: 900px;
+
+}
+
+
+.feature-tag {
+
+    display: inline-block;
+
+    color: var(--blue);
+
+    font-family: var(--heading);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.origin-text h3 {
+
+    font-family: var(--heading);
+
+    font-size: 2rem;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+
+}
+
+
+.origin-text p {
+
+    color: var(--gray);
+
+    margin-bottom: 15px;
+
+}
+
+
+/* Flexbox de tarjetas */
+
+.origin-cards {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.origin-card {
+
+    flex: 1 1 190px;
+
+    min-width: 180px;
+
+    padding: 22px;
+
+    border-radius: var(--radius-medium);
+
+    border: 1px solid var(--light-gray);
+
+    transition: 0.3s ease;
+
+}
+
+
+.origin-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-medium);
+
+}
+
+
+.origin-icon {
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+
+}
+
+
+.origin-card h4 {
+
+    font-family: var(--heading);
+
+    font-size: 1rem;
+
+    margin-bottom: 7px;
+
+}
+
+
+.origin-card p {
+
+    color: var(--gray);
+
+    font-size: 0.82rem;
+
+}
+
+
+.red-card {
+
+    background: var(--red-light);
+
+    border-top: 4px solid var(--red);
+
+}
+
+
+.blue-card {
+
+    background: var(--blue-light);
+
+    border-top: 4px solid var(--blue);
+
+}
+
+
+.gold-card {
+
+    background: var(--gold-light);
+
+    border-top: 4px solid var(--gold);
+
+}
+
+
+.purple-card {
+
+    background: var(--purple-light);
+
+    border-top: 4px solid var(--purple);
+
+}
+
+
+/* =====================================================================
+   DATOS DESTACADOS
+   ===================================================================== */
+
+
+/* Flexbox */
+
+.facts-section {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.fact-box {
+
+    flex: 1 1 200px;
+
+    padding: 25px;
+
+    background: var(--black);
+
+    color: white;
+
+    border-radius: var(--radius-medium);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.fact-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 100px;
+
+    border-radius: 50%;
+
+    right: -40px;
+
+    bottom: -40px;
+
+    background: rgba(255,255,255,0.05);
+
+}
+
+
+.fact-number {
+
+    display: block;
+
+    color: var(--red);
+
+    font-family: var(--heading);
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+}
+
+
+.fact-title {
+
+    display: block;
+
+    font-family: var(--heading);
+
+    font-size: 0.9rem;
+
+    font-weight: 800;
+
+}
+
+
+.fact-box p {
+
+    margin-top: 7px;
+
+    color: #94a3b8;
+
+    font-size: 0.78rem;
+
+}
+
+
+/* =====================================================================
+   LÍNEA DEL TIEMPO
+   ===================================================================== */
+
+.timeline-section {
+
+    position: relative;
+
+}
+
+
+.timeline-intro {
+
+    max-width: 800px;
+
+    color: var(--gray);
+
+    margin-bottom: 40px;
+
+}
+
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   LAYOUT GENERAL CON GRID
+   ---------------------------------------------------------------------
+   Los 20 acontecimientos utilizan CSS Grid para crear las columnas
+   de la línea de tiempo.
+   ===================================================================== */
+
+.timeline-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   TARJETAS INTERNAS CON FLEXBOX
+   ===================================================================== */
+
+.timeline-item {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid var(--light-gray);
+
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow-small);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.timeline-item:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-medium);
+
+}
+
+
+.timeline-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 5px;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--red),
+            var(--orange)
+        );
+
+}
+
+
+.timeline-number {
+
+    min-width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--black);
+
+    color: white;
+
+    font-family: var(--heading);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+}
+
+
+.timeline-year {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 18px;
+
+    padding: 4px 10px;
+
+    border-radius: 8px;
+
+    background: var(--red-light);
+
+    color: var(--red);
+
+    font-family: var(--heading);
+
+    font-size: 0.7rem;
+
+    font-weight: 900;
+
+}
+
+
+.timeline-content {
+
+    padding-right: 45px;
+
+}
+
+
+.timeline-category {
+
+    color: var(--blue);
+
+    font-family: var(--heading);
+
+    font-size: 0.63rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.timeline-content h3 {
+
+    font-family: var(--heading);
+
+    font-size: 1.05rem;
+
+    font-weight: 800;
+
+    margin: 4px 0 7px;
+
+}
+
+
+.timeline-content p {
+
+    color: var(--gray);
+
+    font-size: 0.82rem;
+
+}
+
+
+.final-timeline {
+
+    background:
+        linear-gradient(
+            135deg,
+            #080808,
+            #1f2937
+        );
+
+    color: white;
+
+    border-color: #333;
+
+}
+
+
+.final-timeline .timeline-number {
+
+    background: var(--red);
+
+}
+
+
+.final-timeline .timeline-content h3 {
+
+    color: white;
+
+}
+
+
+.final-timeline .timeline-content p {
+
+    color: #cbd5e1;
+
+}
+
+
+.final-timeline .timeline-category {
+
+    color: var(--gold);
+
+}
+
+
+.final-timeline .timeline-year {
+
+    background: var(--gold);
+
+    color: var(--black);
+
+}
+
+
+/* =====================================================================
+   SECCIÓN DE APRENDIZAJE
+   ===================================================================== */
+
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   GRID PARA TARJETAS
+   ===================================================================== */
+
+.learning-section {
+
+    margin-top: 80px;
+
+    padding: 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #ffffff
+        );
+
+    border-radius: var(--radius-large);
+
+    border: 1px solid var(--light-gray);
+
+}
+
+
+.learning-header h2 {
+
+    font-family: var(--heading);
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+    max-width: 700px;
+
+}
+
+
+/* CSS GRID */
+
+.learning-grid {
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.learning-card {
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid var(--light-gray);
+
+    border-radius: var(--radius-medium);
+
+    transition: 0.3s ease;
+
+}
+
+
+.learning-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-medium);
+
+}
+
+
+.learning-icon {
+
+    font-size: 2rem;
+
+    display: block;
+
+    margin-bottom: 10px;
+
+}
+
+
+.learning-card h3 {
+
+    font-family: var(--heading);
+
+    font-size: 1rem;
+
+    margin-bottom: 7px;
+
+}
+
+
+.learning-card p {
+
+    color: var(--gray);
+
+    font-size: 0.82rem;
+
+}
+
+
+/* =====================================================================
+   ASIDE
+   ===================================================================== */
+
+.project-aside {
+
+    margin-top: 60px;
+
+    padding: 35px;
+
+    border-radius: var(--radius-large);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--black),
+            var(--dark-two)
+        );
+
+    color: white;
+
+    box-shadow: var(--shadow-large);
+
+}
+
+
+.aside-badge {
+
+    display: inline-block;
+
+    background: var(--red);
+
+    padding: 6px 12px;
+
+    border-radius: 50px;
+
+    font-family: var(--heading);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+}
+
+
+.project-aside h2 {
+
+    margin-top: 15px;
+
+    font-family: var(--heading);
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+}
+
+
+.project-aside > p {
+
+    color: #cbd5e1;
+
+    max-width: 750px;
+
+    margin-top: 10px;
+
+}
+
+
+/* =====================================================================
+   FLEXBOX PARA REQUISITOS
+   ===================================================================== */
+
+.requirements-list {
+
+    margin-top: 25px;
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.requirement {
+
+    flex: 1 1 220px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+}
+
+
+.requirement span {
+
+    width: 24px;
+
+    height: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    color: white;
+
+    font-weight: 900;
+
+}
+
+
+.requirement p {
+
+    font-family: var(--heading);
+
+    font-size: 0.76rem;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+
+.main-footer {
+
+    margin-top: 80px;
+
+    padding: 50px 20px 20px;
+
+    background: var(--black);
+
+    color: white;
+
+}
+
+
+.footer-container {
+
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1.5fr;
+
+    gap: 50px;
+
+    padding-bottom: 35px;
+
+    border-bottom: 1px solid #27303d;
+
+}
+
+
+.footer-brand h3 {
+
+    font-family: var(--heading);
+
+    font-size: 1.5rem;
+
+    font-weight: 900;
+
+}
+
+
+.footer-brand h3 span {
+
+    color: var(--red);
+
+}
+
+
+.footer-brand p {
+
+    color: #94a3b8;
+
+    margin-top: 7px;
+
+    font-size: 0.8rem;
+
+}
+
+
+.footer-navigation h4,
+.footer-social h4 {
+
+    font-family: var(--heading);
+
+    font-size: 0.85rem;
+
+    margin-bottom: 12px;
+
+}
+
+
+.footer-navigation li {
+
+    margin-bottom: 6px;
+
+}
+
+
+.footer-navigation a {
+
+    color: #94a3b8;
+
+    font-size: 0.8rem;
+
+}
+
+
+.footer-navigation a:hover {
+
+    color: white;
+
+}
+
+
+.footer-social p {
+
+    color: #94a3b8;
+
+    font-size: 0.8rem;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   FLEXBOX EN REDES SOCIALES
+   ===================================================================== */
+
+.social-icons {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* Botón general */
+
+.social-link {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: white;
+
+    font-family: var(--heading);
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+
+}
+
+
+/* =====================================================================
+   NIKE
+   ===================================================================== */
+
+.social-nike {
+
+    background-color: #2563eb;
+
+    color: white;
+
+}
+
+
+/* =====================================================================
+   FACEBOOK
+   ===================================================================== */
+
+.social-facebook {
+
+    background-color: #1877f2;
+
+    color: white;
+
+    font-size: 1.2rem;
+
+}
+
+
+/* =====================================================================
+   INSTAGRAM
+   ===================================================================== */
+
+.social-instagram {
+
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #fd1d1d,
+            #fcb045
+        );
+
+    color: white;
+
+    font-size: 1.2rem;
+
+}
+
+
+/* =====================================================================
+   X
+   ===================================================================== */
+
+.social-x {
+
+    background-color: #000000;
+
+    color: white;
+
+    font-size: 0.85rem;
+
+}
+
+
+/* =====================================================================
+   YOUTUBE
+   ===================================================================== */
+
+.social-youtube {
+
+    background-color: #ff0000;
+
+    color: white;
+
+    font-size: 0.9rem;
+
+}
+
+
+/* =====================================================================
+   EFECTO AL PASAR EL MOUSE
+   ===================================================================== */
+
+.social-link:hover {
+
+    transform: translateY(-4px);
+
+    filter: brightness(1.15);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* Mantener el color de cada red al pasar el mouse */
+
+.social-nike:hover {
+
+    background-color: #2563eb;
+
+}
+
+
+.social-facebook:hover {
+
+    background-color: #1877f2;
+
+}
+
+
+.social-instagram:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #fd1d1d,
+            #fcb045
+        );
+
+}
+
+
+.social-x:hover {
+
+    background-color: #000000;
+
+}
+
+
+.social-youtube:hover {
+
+    background-color: #ff0000;
+
+}
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   MEDIA QUERIES
+   ---------------------------------------------------------------------
+   Adaptación para celulares.
+   ===================================================================== */
+
+@media (max-width: 700px) {
+
+
+    .top-announcement {
+
+        font-size: 0.6rem;
+
+    }
+
+
+    .header-body {
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        padding: 12px 10px;
+
+    }
+
+
+    .main-nav {
+
+        width: 100%;
+
+    }
+
+
+    /* MENÚ ADAPTABLE */
+
+    .main-nav ul {
+
+        width: 100%;
+
+        gap: 5px;
+
+    }
+
+
+    .nav-link {
+
+        font-size: 0.7rem;
+
+        padding: 7px 8px;
+
+    }
+
+
+    .hero-banner {
+
+        margin-top: 20px;
+
+        padding: 35px 22px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .hero-title {
+
+        font-size: 3.2rem;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .hero-circle {
+
+        width: 220px;
+
+        height: 220px;
+
+    }
+
+
+    .hero-symbol {
+
+        font-size: 2rem;
+
+    }
+
+
+    .floating-card {
+
+        display: none;
+
+    }
+
+
+    .intro-section {
+
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+
+    }
+
+
+    .intro-number {
+
+        font-size: 2.5rem;
+
+    }
+
+
+    .section-heading {
+
+        align-items: flex-start;
+
+    }
+
+
+    .section-line {
+
+        display: none;
+
+    }
+
+
+    .origin-main-card {
+
+        padding: 25px;
+
+    }
+
+
+    .origin-text h3 {
+
+        font-size: 1.5rem;
+
+    }
+
+
+    .facts-section {
+
+        flex-direction: column;
+
+    }
+
+
+    .fact-box {
+
+        width: 100%;
+
+    }
+
+
+    .timeline-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .timeline-item {
+
+        padding: 20px;
+
+        gap: 12px;
+
+    }
+
+
+    .timeline-number {
+
+        min-width: 35px;
+
+        height: 35px;
+
+        font-size: 0.6rem;
+
+    }
+
+
+    .timeline-year {
+
+        position: static;
+
+        display: inline-block;
+
+        margin-bottom: 5px;
+
+    }
+
+
+    .timeline-content {
+
+        padding-right: 0;
+
+    }
+
+
+    .learning-section {
+
+        padding: 28px 20px;
+
+    }
+
+
+    .learning-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .project-aside {
+
+        padding: 28px 20px;
+
+    }
+
+
+    .footer-container {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 30px;
+
+    }
+
+
+    .social-icons {
+
+        justify-content: center;
+
+    }
+
+}
+
+
+/* =====================================================================
+   REQUISITO SEMANA 6:
+   MEDIA QUERY EXTRA PARA PANTALLAS MUY PEQUEÑAS
+   ===================================================================== */
+
+@media (max-width: 420px) {
+
+
+    .main-layout {
+
+        width: 94%;
+
+    }
+
+
+    .brand-title {
+
+        font-size: 1.1rem;
+
+    }
+
+
+    .hero-title {
+
+        font-size: 2.6rem;
+
+    }
+
+
+    .hero-subtitle {
+
+        font-size: 0.85rem;
+
+    }
+
+
+    .hero-button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 1.6rem;
+
+    }
+
+
+    .timeline-item {
+
+        flex-direction: column;
+
+    }
+
+
+    .timeline-content {
+
+        width: 100%;
+
+    }
+
+
+}
+
+
+/* =====================================================================
+   FIN DEL CSS
+   ===================================================================== */
